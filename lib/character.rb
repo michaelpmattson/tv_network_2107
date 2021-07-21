@@ -8,4 +8,8 @@ class Character
     @actor  = attributes[:actor]
     @salary = attributes[:salary]
   end
+
+  def bankroll?
+    salary > 500_000
+  end
 end

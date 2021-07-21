@@ -10,4 +10,8 @@ class Network
   def add_show(show)
     @shows << show
   end
+
+  def main_characters
+
+  end
 end
