@@ -7,18 +7,13 @@ RSpec.describe Character do
 
       expect(kitt).to be_an_instance_of(Character)
     end
+
+    it 'has attributes' do
+      kitt = Character.new({name: "KITT", actor: "William Daniels", salary: 1_000_000})
+
+      expect(kitt.name).to eq("KITT")
+      expect(kitt.actor).to eq("William Daniels")
+      expect(kitt.salary).to eq(1000000)
+    end
   end
 end
-
-#
-# kitt = Character.new({name: "KITT", actor: "William Daniels", salary: 1_000_000})
-# # => #<Character:0x00007f98a4ba8dc8...>
-#
-# kitt.name
-# # => "KITT"
-#
-# kitt.actor
-# # => "William Daniels"
-#
-# kitt.salary
-# # => 1000000
