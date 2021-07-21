@@ -10,19 +10,19 @@ RSpec.describe Show do
 
       expect(knight_rider).to be_an_instance_of(Show)
     end
+
+    it 'has attributes' do
+      kitt = Character.new({name: "KITT", actor: "William Daniels", salary: 1_000_000})
+      michael_knight = Character.new({name: "Michael Knight", actor: "David Hasselhoff", salary: 1_600_000})
+      knight_rider = Show.new("Knight Rider", "Glen Larson", [michael_knight, kitt])
+
+      expect(knight_rider.name).to eq("Knight Rider")
+      expect(knight_rider.creator).to eq("Glen Larson")
+      expect(knight_rider.characters).to eq([michael_knight, kitt])
+    end
   end
 end
 
-#
-# knight_rider.name
-# # => "Knight Rider"
-#
-# knight_rider.creator
-# # => "Glen Larson"
-#
-# knight_rider.characters
-# # => [#<Character:0x00007f8327213de0...>, #<Character:0x00007f8326ab57d8...>]
-#
 # knight_rider.total_salary
 # # => 2600000
 #
