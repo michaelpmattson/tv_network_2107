@@ -32,4 +32,26 @@ class Network
     end
     actors_by_show
   end
+
+  def shows_by_actor
+    shows_by_actor = Hash.new { |hash, key| hash[key] = [] }
+    shows.each do |show|
+      characters.each do |character|
+        if show.characters.include?(character)
+          shows_by_actor[character.actor] << show
+        end
+      end
+    end
+    shows_by_actor
+  end
+
+  def prolific_actors
+    prolific_actors = []
+    shows_by_actor.each do |actor, shows|
+      if shows.count > 1
+        prolific_actors << actor
+      end
+    end
+    prolific_actors
+  end
 end
