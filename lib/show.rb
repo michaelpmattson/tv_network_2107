@@ -22,4 +22,10 @@ class Show
 
     highest_paid.actor
   end
+
+  def actors
+    characters.map do |character|
+      character.actor
+    end
+  end
 end
