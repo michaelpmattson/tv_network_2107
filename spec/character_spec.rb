@@ -26,4 +26,14 @@ RSpec.describe Character do
       expect(tubbs.bankroll?).to be(false)
     end
   end
+
+  context '#upcase?' do
+    it 'verifies upcase' do
+      kitt = Character.new({name: "KITT", actor: "William Daniels", salary: 1_000_000})
+      tubbs = Character.new({name: "Tubbs", actor: "Philip Michael Thomas", salary: 500_000})
+
+      expect(kitt.upcase?).to be(true)
+      expect(tubbs.upcase?).to be(false)
+    end
+  end
 end

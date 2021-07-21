@@ -12,4 +12,8 @@ class Character
   def bankroll?
     salary > 500_000
   end
+
+  def upcase?
+    name == name.upcase
+  end
 end
