@@ -24,4 +24,12 @@ class Network
       show.characters
     end
   end
+
+  def actors_by_show
+    actors_by_show = Hash.new { |hash, key| hash[key] = [] }
+    shows.each do |show|
+      actors_by_show[show] = show.actors
+    end
+    actors_by_show
+  end
 end
